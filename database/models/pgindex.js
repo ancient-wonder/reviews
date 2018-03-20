@@ -61,7 +61,7 @@ const createTable = () => {
     'value DOUBLE PRECISION);')
     .then(async () => {
         console.log('table created');
-        for(let i = 0; i <= 20; i++) {
+        for(let i = 0; i <= 200; i++) {
             await insertData(generateData(), i);
         }
     })

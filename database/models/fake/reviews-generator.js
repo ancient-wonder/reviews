@@ -3,33 +3,10 @@ const fs = require('fs');
 const db = require('../index.js');
 const MongoClient = require('mongodb').MongoClient;
 
-const generateReviews = () => {
-  // load 200, create 
-  const guests = [];
-  for (let i = 1; i < 5; i++) {
-    let User = {
-      id: i,
-      reviews: {
-        guest_name: generateNames(),
-        communication: faker.random.number({ min: 0, max: 5 }),
-        cleaniness: faker.random.number({ min: 0, max: 5 }),
-        location: faker.random.number({ min: 0, max: 5 }),
-        checkin: faker.random.number({ min: 0, max: 5 }),
-        accuracy: faker.random.number({ min: 0, max: 5 }),
-        message: generateMessages(),
-        date: generateDates(),
-        image: generateImages(),
-        value: faker.random.number({ min: 0, max: 5 })
-      }
-    };
-    guests.push(User);
-  }
-  return guests;
-};
 
 const generateNames = () => {
   let names = [];
-  for (let i = 0; i < 56; i++) {
+  for (let i = 0; i < 5; i++) {
     names.push(`${faker.name.findName()}`);
   }
   return names;
@@ -37,7 +14,7 @@ const generateNames = () => {
 
 const generateDates = () => {
   let dates = [];
-  for (let i = 0; i < 56; i++) {
+  for (let i = 0; i < 5; i++) {
     dates.push(`${faker.date.month()} ${Math.floor(
       Math.random() * (2017 - 2013 + 1)
     ) + 2013}`);
@@ -47,7 +24,7 @@ const generateDates = () => {
 
 const generateImages = () => {
   let images = [];
-  for (let i = 0; i < 56; i++) {
+  for (let i = 0; i < 5; i++) {
    images.push(faker.image.avatar()); 
   }
   return images;
@@ -55,7 +32,7 @@ const generateImages = () => {
 
 const generateMessages = () => {
   let messages = [];
-  for (let i = 0; i < 56; i++) {
+  for (let i = 0; i < 5; i++) {
     let message = `${faker.hacker.phrase()} ${faker.hacker.phrase()} ${faker.hacker.phrase()} ${faker.hacker.phrase()}`;
     messages.push(message);
   }
@@ -75,8 +52,6 @@ const createAndWriteToFile = () => {
   });
 };
 
-// createAndWriteToFile()
-
   async function milReviews() {
     const clientConnect = await MongoClient.connect('mongodb://localhost/27017');
     const mdb = clientConnect.db('reviews');
@@ -88,22 +63,22 @@ const createAndWriteToFile = () => {
         console.log(`100000! count ${i/100000}`); 
         guests = [];     
       }
-      let user = {
-        _id: i,
+      let product = {
+        product_id: i,
         reviews: {
-          guest_name: faker.name.findName(),
-          communication: faker.random.number({ min: 0, max: 5 }),
-          cleaniness: faker.random.number({ min: 0, max: 5 }),
-          location: faker.random.number({ min: 0, max: 5 }),
-          checkin: faker.random.number({ min: 0, max: 5 }),
-          accuracy: faker.random.number({ min: 0, max: 5 }),
-          message: faker.hacker.phrase(),
-          date: faker.date.month(),
-          image: faker.image.avatar(),
-          value: faker.random.number({ min: 0, max: 5 })
+          guest_name: generateNames(),
+          communication: [faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 })],
+          cleaniness: [faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 })],
+          location: [faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 })],
+          checkin: [faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 })],
+          accuracy: [faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 })],
+          message: generateMessages(),
+          date: generateDates(),
+          image: generateImages(),
+          value: [faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 })]
         }
       }
-      guests.push(user);
+      guests.push(product);
     }
     clientConnect.close();
   }
