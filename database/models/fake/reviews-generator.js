@@ -6,7 +6,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 const generateNames = () => {
   let names = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 56; i++) {
     names.push(`${faker.name.findName()}`);
   }
   return names;
@@ -14,7 +14,7 @@ const generateNames = () => {
 
 const generateDates = () => {
   let dates = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 56; i++) {
     dates.push(`${faker.date.month()} ${Math.floor(
       Math.random() * (2017 - 2013 + 1)
     ) + 2013}`);
@@ -24,7 +24,7 @@ const generateDates = () => {
 
 const generateImages = () => {
   let images = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 56; i++) {
    images.push(faker.image.avatar()); 
   }
   return images;
@@ -32,7 +32,7 @@ const generateImages = () => {
 
 const generateMessages = () => {
   let messages = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 56; i++) {
     let message = `${faker.hacker.phrase()} ${faker.hacker.phrase()} ${faker.hacker.phrase()} ${faker.hacker.phrase()}`;
     messages.push(message);
   }
@@ -66,20 +66,21 @@ const createAndWriteToFile = () => {
       let product = {
         product_id: i,
         reviews: {
-          guest_name: generateNames(),
-          communication: [faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 })],
-          cleaniness: [faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 })],
-          location: [faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 })],
-          checkin: [faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 })],
-          accuracy: [faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 })],
-          message: generateMessages(),
-          date: generateDates(),
-          image: generateImages(),
-          value: [faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 }), faker.random.number({ min: 0, max: 5 })]
+          guest_name: faker.name.findName(),
+          communication: faker.random.number({ min: 0, max: 5 }),
+          cleaniness: faker.random.number({ min: 0, max: 5 }),
+          location: faker.random.number({ min: 0, max: 5 }),
+          checkin: faker.random.number({ min: 0, max: 5 }),
+          accuracy: faker.random.number({ min: 0, max: 5 }),
+          message: faker.hacker.phrase(),
+          date: faker.date.month(),
+          image: faker.image.avatar(),
+          value: faker.random.number({ min: 0, max: 5 })
         }
       }
       guests.push(product);
     }
+    collection.createIndex({product_id:1});
     clientConnect.close();
   }
 
