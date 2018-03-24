@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
-// const FormatDate = (mongoose.Schema.Types.FormatDate = require('mongoose-schema-formatdate'));
-// const db = mongoose.connection;
-// mongoose.connect("mongodb://localhost/reviews");
+// const mongoose = require('mongoose');
+// // const FormatDate = (mongoose.Schema.Types.FormatDate = require('mongoose-schema-formatdate'));
+// // const db = mongoose.connection;
+// // mongoose.connect("mongodb://localhost/reviews");
 
 const reviewSchema = mongoose.Schema({
   // TODO: my schemas here

@@ -35,18 +35,18 @@ export default class Review extends React.Component {
     );
     await this.setState(
       {
-        reviews: retrieved.data.reviews,
-        totalReviews: retrieved.data.reviews.message.length,
-        accuracy: retrieved.data.reviews.accuracy,
-        communication: retrieved.data.reviews.communication,
-        checkin: retrieved.data.reviews.checkin,
-        value: retrieved.data.reviews.value,
-        cleaniness: retrieved.data.reviews.cleaniness,
-        location: retrieved.data.reviews.location
+        reviews: retrieved.data[0].reviews.message,
+        totalReviews: retrieved.data[0].reviews.message,
+        accuracy: retrieved.data[0].reviews.accuracy,
+        communication: retrieved.data[0].reviews.communication,
+        checkin: retrieved.data[0].reviews.checkin,
+        value: retrieved.data[0].reviews.value,
+        cleaniness: retrieved.data[0].reviews.cleaniness,
+        location: retrieved.data[0].reviews.location
       },
       () =>
         console.log(
-          `current objects ahve this ==> ${this.state.reviews.length}`
+          `current objects have this ==> ${this.state.reviews}`
         )
     );
   }

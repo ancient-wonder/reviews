@@ -17,6 +17,7 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
+    "artillery": "^1.6.0-14",
     "axios": "^0.18.0",
     "cors": "^2.8.4",
     "css-loader": "^0.28.10",
@@ -30,8 +31,10 @@
     "lodash": "^4.17.5",
     "lodash.filter": "^4.6.0",
     "lodash.includes": "^4.3.0",
-    "mongoose": "^5.0.7",
+    "mongoose": "^5.0.11",
     "mongoose-schema-formatdate": "^1.0.0",
+    "newrelic": "^3.2.0",
+    "nodemon": "^1.17.2",
     "path": "^0.12.7",
     "pg": "^7.4.1",
     "pg-promise": "^8.2.2",
@@ -40,6 +43,7 @@
     "react-icons": "^2.2.7",
     "react-paginate": "^5.1.0",
     "react-stars": "^2.2.5",
+    "redis": "^2.8.0",
     "sequelize": "^4.36.1",
     "style-loader": "^0.20.2",
     "styled-components": "^3.1.6",
