@@ -33,10 +33,11 @@ export default class Review extends React.Component {
     const retrieved = await axios.get(
       `http://localhost:3004/reviews/${id}/reviews`
     );
+    console.log(retrieved);
     await this.setState(
       {
-        reviews: retrieved.data[0].reviews.message,
-        totalReviews: retrieved.data[0].reviews.message,
+        reviews: retrieved.data[0].reviews,
+        totalReviews: retrieved.data[0].product_id,
         accuracy: retrieved.data[0].reviews.accuracy,
         communication: retrieved.data[0].reviews.communication,
         checkin: retrieved.data[0].reviews.checkin,

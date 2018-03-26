@@ -39,16 +39,14 @@ export default class ReviewList extends React.Component {
 
   renderIndividualReviews() {
     const individualReviewArray = [];
-    for (let i = 0; i < this.state.displayedDates; i++) {
       individualReviewArray.push(
         <IndividualReview
-          username={this.state.displayedGuestNames[i]}
-          reviewDate={this.state.displayedDates[i]}
-          image={this.state.displayedImages[i]}
-          message={this.state.displayedReviews[i]}
+          username={this.state.displayedGuestNames}
+          reviewDate={this.state.displayedDates}
+          image={this.state.displayedImages}
+          message={this.state.displayedReviews}
         />
       );
-    }
     return individualReviewArray;
   }
 

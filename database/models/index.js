@@ -1,46 +1,46 @@
 // const mongoose = require('mongoose');
-// // const FormatDate = (mongoose.Schema.Types.FormatDate = require('mongoose-schema-formatdate'));
-// // const db = mongoose.connection;
-// // mongoose.connect("mongodb://localhost/reviews");
+// // // const FormatDate = (mongoose.Schema.Types.FormatDate = require('mongoose-schema-formatdate'));
+// // // const db = mongoose.connection;
+// mongoose.connect("mongodb://localhost/reviews");
 
-const reviewSchema = mongoose.Schema({
-  // TODO: my schemas here
-  _id: { type: Number, unique: false },
-  reviews:
-    {
-      guest_name: String,
-      communication: Number,
-      cleaniness: Number,
-      location: Number,
-      checkin: Number,
-      value: Number,
-      accuracy: Number,
-      message: String,
-      date: String,
-      image: String,
-    }
+// const reviewSchema = mongoose.Schema({
+//   // TODO: my schemas here
+//   _id: { type: Number, unique: false },
+//   reviews:
+//     {
+//       guest_name: String,
+//       communication: Number,
+//       cleaniness: Number,
+//       location: Number,
+//       checkin: Number,
+//       value: Number,
+//       accuracy: Number,
+//       message: String,
+//       date: String,
+//       image: String,
+//     }
 
-});
+// });
 
-const ReviewsModel = mongoose.model('Guest', reviewSchema);
+// const ReviewsModel = mongoose.model('Guest', reviewSchema);
 
-async function saveAllReviews(reviews) {
-  await ReviewsModel.insertMany(reviews);
-};
+// async function saveAllReviews(reviews) {
+//   await ReviewsModel.insertMany(reviews);
+// };
 
-const findReviewById = id => {
-  return ReviewsModel.findOne({ id });
-};
+// const findReviewById = id => {
+//   return ReviewsModel.findOne({ id });
+// };
 
-const findAllReviews = () => {
-  return ReviewsModel.find();
-};
+// const findAllReviews = () => {
+//   return ReviewsModel.find();
+// };
 
-module.exports = {
-  saveAllReviews,
-  findReviewById,
-  findAllReviews
-};
+// module.exports = {
+//   saveAllReviews,
+//   findReviewById,
+//   findAllReviews
+// };
 
 /* 
   id, name, accuracy, communication, cleaniness, location, checkin, message, date
