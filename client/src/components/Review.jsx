@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import ReviewList from './ReviewList';
 import Score from './Score.jsx';
 import HeaderBar from './HeaderBar';
