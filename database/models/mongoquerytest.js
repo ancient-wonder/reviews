@@ -13,6 +13,7 @@ var client = await MongoClient.connect('mongodb://localhost/');
     end = new Date().getTime();
     // console.log(`${time - end} ms`);
     // console.log(find);
+    client.close();
     return find;
 }
 

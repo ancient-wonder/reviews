@@ -1,49 +1,13 @@
 config:
-  target: 'http://127.0.0.1:3004'
+  target: 'http://localhost:3004'
   phases:
     - duration: 60
-      arrivalRate: 20
+      arrivalRate: 10
+  processor: './processor.js'
 scenarios:
-  - flow:
+- flow:
     - loop:
+      - function: 'randomNum'
       - get:
-         url: "/reviews/{{ $loopElement }}"
-      over: 
-        - 5
-        - 5
-        - 5
-        - 5
-        - 5
-        - 5
-        - 10
-        - 60
-        - 10
-        - 99999
-        - 1000000
-        - 3
-        - 3
-        - 3
-        - 66
-        - 69
-        - 20
-        - 77
-        - 6789
-        - 2345678
-        - 3423
-        - 0
-        - 0
-        - 1
-        - 1
-        - 2
-        - 4
-        - 5
-        - 34567
-        - 3456789
-        - 60
-        - 100
-        - 200
-        - 2000
-        - 354566
-        - 12345677
-        - 9857463
-      count: 50
+          url: '/reviews/{{ id }}'
+      count: 100
