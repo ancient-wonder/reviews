@@ -80,7 +80,7 @@ const createAndWriteToFile = () => {
       }
       guests.push(product);
     }
-    collection.createIndex({product_id:1});
+    await collection.createIndex({product_id:1});
     clientConnect.close();
   }
 
