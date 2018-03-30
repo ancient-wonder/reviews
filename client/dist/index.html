@@ -3,11 +3,17 @@
 
 <head>
   <title>Reviews</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 </head>
 
 <body>
   <div id="reviews"></div>
   <script type="text/javascript" src="bundle.js"></script>
 </body>
-
+<script>      
+ReactDOM.render(
+React.createElement(Review),
+document.getElementById('reviews'),
+);</script>
 </html>
