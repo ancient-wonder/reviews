@@ -374,15 +374,15 @@ eval("\n\n/**\n * A `Cancel` is an object that is thrown when an operation is ca
 
 /***/ }),
 /* 26 */
-/*!******************************!*\
-  !*** ./client/src/index.jsx ***!
-  \******************************/
+/*!*************************************!*\
+  !*** ./client/src/index-server.jsx ***!
+  \*************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _Review = __webpack_require__(/*! ./components/Review */ 27);\n\nvar _Review2 = _interopRequireDefault(_Review);\n\n__webpack_require__(/*! ./stylesheet/stylesheet.css */ 81);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// ReactDOM.render(<Review />, document.getElementById('reviews'));\nwindow.Review = _Review2.default;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjYuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vY2xpZW50L3NyYy9pbmRleC5qc3g/ZjUxNSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmV2aWV3IGZyb20gJy4vY29tcG9uZW50cy9SZXZpZXcnO1xuaW1wb3J0ICcuL3N0eWxlc2hlZXQvc3R5bGVzaGVldC5jc3MnO1xuXG4vLyBSZWFjdERPTS5yZW5kZXIoPFJldmlldyAvPiwgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jldmlld3MnKSk7XG53aW5kb3cuUmV2aWV3ID0gUmV2aWV3O1xuXG5cbi8vIFdFQlBBQ0sgRk9PVEVSIC8vXG4vLyBjbGllbnQvc3JjL2luZGV4LmpzeCJdLCJtYXBwaW5ncyI6Ijs7QUFBQTtBQUNBOzs7QUFBQTtBQUNBOzs7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///26\n");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _Review = __webpack_require__(/*! ./components/Review */ 27);\n\nvar _Review2 = _interopRequireDefault(_Review);\n\n__webpack_require__(/*! ./stylesheet/stylesheet.css */ 81);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = _Review2.default;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjYuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vY2xpZW50L3NyYy9pbmRleC1zZXJ2ZXIuanN4PzA2N2UiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJldmlldyBmcm9tICcuL2NvbXBvbmVudHMvUmV2aWV3JztcbmltcG9ydCAnLi9zdHlsZXNoZWV0L3N0eWxlc2hlZXQuY3NzJztcblxuZXhwb3J0IGRlZmF1bHQgUmV2aWV3O1xuXG5cbi8vIFdFQlBBQ0sgRk9PVEVSIC8vXG4vLyBjbGllbnQvc3JjL2luZGV4LXNlcnZlci5qc3giXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBO0FBQ0E7OztBQUFBO0FBQ0E7OztBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///26\n");
 
 /***/ }),
 /* 27 */

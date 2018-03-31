@@ -32,7 +32,7 @@ const client = {
 };
 
 const server = {
-  entry: `${SRC_DIR}/index.jsx`,
+  entry: `${SRC_DIR}/index-server.jsx`,
   output: {
     filename: 'app-server.js',
     path: DIST_DIR,
