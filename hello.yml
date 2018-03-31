@@ -1,5 +1,5 @@
 config:
-  target: 'http://localhost:3004'
+  target: 'http://18.144.49.228:3004'
   phases:
     - duration: 60
       arrivalRate: 10
@@ -10,4 +10,4 @@ scenarios:
       - function: 'randomNum'
       - get:
           url: '/reviews/{{ id }}'
-      count: 100
+      count: 50

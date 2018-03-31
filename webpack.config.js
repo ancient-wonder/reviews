@@ -7,7 +7,7 @@ const DIST_DIR = path.join(__dirname, '/client/dist');
 const client = {
   entry: `${SRC_DIR}/index.jsx`,
   output: {
-    filename: 'bundle.js',
+    filename: 'app.js',
     path: DIST_DIR,
   },
   module: {
@@ -34,7 +34,7 @@ const client = {
 const server = {
   entry: `${SRC_DIR}/index.jsx`,
   output: {
-    filename: 'bundle.js',
+    filename: 'app.js',
     path: DIST_DIR,
   },
   module: {
