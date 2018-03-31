@@ -34,7 +34,7 @@ const client = {
 const server = {
   entry: `${SRC_DIR}/index.jsx`,
   output: {
-    filename: 'app.js',
+    filename: 'app-server.js',
     path: DIST_DIR,
   },
   module: {
