@@ -4,7 +4,7 @@ let collection;
 let time;
 
 let query = async (num)  => {
-var client = await MongoClient.connect('mongodb://localhost/27017');
+var client = await MongoClient.connect('mongodb://13.56.156.81:27017');
 
     const db = client.db('reviews');
     collection = db.collection('guests');

@@ -32,7 +32,7 @@ export default class Review extends React.Component {
     let id =
       this.props.id || parseInt(window.location.pathname.split('/')[2], 10);
     const retrieved = await axios.get(
-      `http://localhost:3004/reviews/${id}/reviews`
+      `http://54.67.45.116:3004/reviews/${id}/reviews`
     );
     console.log(retrieved);
     await this.setState(
